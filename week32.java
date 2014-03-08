@@ -8,13 +8,13 @@ class weekTest3_2{
 		int opt=0,stuGrade;
 		String stuName,searchKey;
 		Scanner stdIn = new Scanner(System.in);
+		HashMap<String,Integer> stuData = new HashMap<String,Integer>();
 		while(true)
 		{
-			HashMap<String,Integer> stuData = new HashMap<String,Integer>();
 			System.out.println("1)Input 2)Search 3)Exit?");
 			opt = stdIn.nextInt();
 			if(opt == 1){
-				stuName = stdIn.nextLine();
+				stuName = stdIn.nextLine(); /*前面會有空白鍵產生*/
 				System.out.print("Student Name:");
 				stuName = stdIn.nextLine();
 				
@@ -23,9 +23,9 @@ class weekTest3_2{
 				stuData.put(stuName,stuGrade);
 			}
 			else if(opt ==2){
-				searchKey = stdIn.nextLine();
+				Scanner key = new Scanner(System.in);
 				System.out.print("Search Key(stuName):");
-				searchKey = stdIn.nextLine();
+				searchKey = key.nextLine();
 				if(stuData.get(searchKey) == null)
 					System.out.println("Not Found!\n");
 				else
